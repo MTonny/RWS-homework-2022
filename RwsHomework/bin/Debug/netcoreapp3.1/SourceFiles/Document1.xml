@@ -1,0 +1,7 @@
+<Root>
+  <title>Titulek</title>
+  <text>Text</text>
+  <person>Testonín Testovič</person>
+  <id>1234</id>
+  <note>Toto je test XML to JSON</note>
+</Root>

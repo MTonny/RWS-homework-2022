@@ -1,0 +1,16 @@
+C:\Users\ATM\source\repos\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.deps.json
+C:\Users\ATM\source\repos\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.dll
+C:\Users\ATM\source\repos\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.csprojAssemblyReference.cache
+C:\Users\ATM\source\repos\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.AssemblyInfoInputs.cache
+C:\Users\ATM\source\repos\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.AssemblyInfo.cs
+C:\Users\ATM\source\repos\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.pdb
+C:\Users\ATM\source\repos\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.dll
+C:\Users\ATM\source\repos\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.pdb
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.deps.json
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.dll
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\bin\Debug\netcoreapp3.1\RwsHomeworkService.pdb
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.csprojAssemblyReference.cache
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.AssemblyInfoInputs.cache
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.AssemblyInfo.cs
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.dll
+C:\Users\ATM\source\repos\RWS homework 2022\RwsHomeworkService\obj\Debug\netcoreapp3.1\RwsHomeworkService.pdb
