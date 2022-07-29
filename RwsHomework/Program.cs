@@ -9,51 +9,57 @@ using RwsHomeworkService.StorageService.Models;
 namespace RwsHomework
 {    
     public class Program
-    {        
-
-        // načte vstupní xml, udělá z něho json a ten uloží do targetu
-
+    {          
         static void Main(string[] args)
         {
             string sourceFileName = Path.Combine(Environment.CurrentDirectory, "SourceFiles\\Document1.xml");           
             string targetFileName = Path.Combine(Environment.CurrentDirectory, "TargetFiles\\Document1.json");
 
-            StorageService storageService = new StorageService(new StorageServiceLocal());
-
-
-
+            // Get storage service
+            StorageService storageService = new StorageService(new StorageServiceLocal());            
             FileResult inputFile;
 
+            // Get file bytes
             try
             {                
                 inputFile = storageService.GetFileBytes(sourceFileName);
             }
             catch (Exception ex)
             {
+                // log ex
                 throw ex;
             }
 
-
+            // Getting proces ok
             if (inputFile.Errors.Status)
             {
-                var xdoc = XDocument.Parse(System.Text.Encoding.Default.GetString(inputFile.FileBytes));
-                var doc = new Document
+                try
                 {
-                    Title = xdoc.Root.Element("title") != null ? xdoc.Root.Element("title").Value : "",
-                    Text = xdoc.Root.Element("text") != null ?  xdoc.Root.Element("text").Value : ""
-                };
+                    var xdoc = XDocument.Parse(System.Text.Encoding.Default.GetString(inputFile.FileBytes));
+                    var doc = new Document
+                    {
+                        Title = xdoc.Root.Element("title") != null ? xdoc.Root.Element("title").Value : "",
+                        Text = xdoc.Root.Element("text") != null ? xdoc.Root.Element("text").Value : ""
+                    };
 
+                    // Create JSON string
+                    string serializedDoc = JsonConvert.SerializeObject(doc);
+                    byte[] serializedDocBytes = System.Text.Encoding.UTF8.GetBytes(serializedDoc);
 
-                string serializedDoc = JsonConvert.SerializeObject(doc);
-                byte[] serializedDocBytes = System.Text.Encoding.UTF8.GetBytes(serializedDoc);
-
-                FileResult resUpload = storageService.UploadFileBytes(serializedDocBytes, targetFileName);
-                if (!resUpload.Errors.Status)
-                {
-                    PrintErrors(resUpload.Errors.ErrorList);
-                    Console.WriteLine("\u001b[31mprogram ends with errors\u001b[0m");
-                    return; 
+                    // Upload new file
+                    FileResult resUpload = storageService.UploadFileBytes(serializedDocBytes, targetFileName);
+                    if (!resUpload.Errors.Status)
+                    {
+                        PrintErrors(resUpload.Errors.ErrorList);
+                        Console.WriteLine("\u001b[31mprogram ends with errors\u001b[0m");
+                        return;
+                    }
                 }
+                catch (Exception ex)
+                {
+                    // log ex
+                    throw ex;
+                }                
             }
             else
             {
@@ -64,6 +70,10 @@ namespace RwsHomework
             Console.WriteLine("\u001b[32mDone!\u001b[0m");
         }
 
+        /// <summary>
+        /// Prints errors
+        /// </summary>
+        /// <param name="errors">List of errors</param>
         private static void PrintErrors(List<Error> errors)
         {
            errors.ForEach(x =>

@@ -6,6 +6,7 @@ namespace RwsHomeworkService.StorageService.Models
 {
     public class ErrorResult
     {
+        // If true - OK, no errors
         public bool Status
         {
             get { return ErrorList.Count == 0; }

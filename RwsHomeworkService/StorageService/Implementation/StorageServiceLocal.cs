@@ -16,11 +16,16 @@ namespace RwsHomeworkService.StorageService
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Get file bytes from storage
+        /// </summary>
+        /// <param name="fullFileName"></param>
+        /// <returns></returns>
         public FileResult GetFileBytes(string fullFileName)
         {
             FileResult res = new FileResult();
 
-
+            // Check if process can continue
             StorageServiceCheck storageServiceCheck = new StorageServiceCheck();
             storageServiceCheck.AddCheck(new CheckStorageLocalFileExists(StorageServiceOperationTypeEnum.Download, fullFileName));
 
@@ -31,7 +36,7 @@ namespace RwsHomeworkService.StorageService
                 return res;
             }          
             
-
+            // Get bytes
             try
             {
                 System.IO.FileStream fs = System.IO.File.OpenRead(fullFileName);
@@ -55,11 +60,17 @@ namespace RwsHomeworkService.StorageService
             }
         }
 
+        /// <summary>
+        /// Upload file to storage
+        /// </summary>
+        /// <param name="fileBytes"></param>
+        /// <param name="fullFileName"></param>
+        /// <returns></returns>
         public FileResult UploadFileBytes(byte[] fileBytes, string fullFileName)
         {
             FileResult res = new FileResult();
 
-
+            // Check if process can continue
             StorageServiceCheck storageServiceCheck = new StorageServiceCheck();
             storageServiceCheck.AddCheck(new CheckStorageLocalFileExists(StorageServiceOperationTypeEnum.Upload, fullFileName));
 
@@ -70,7 +81,7 @@ namespace RwsHomeworkService.StorageService
                 return res;
             }
 
-
+            // Upload file
             try
             {
                 System.IO.FileStream fs = System.IO.File.OpenWrite(fullFileName);

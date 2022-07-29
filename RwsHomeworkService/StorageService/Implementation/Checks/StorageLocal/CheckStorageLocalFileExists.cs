@@ -8,6 +8,10 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Implementation.Checks.StorageLocal
 {
+    /// <summary>
+    /// Check definition for StorageLocal
+    /// Type: check file exists
+    /// </summary>
     public class CheckStorageLocalFileExists : IErrorCheck
     {
         private StorageServiceOperationTypeEnum _operationType;

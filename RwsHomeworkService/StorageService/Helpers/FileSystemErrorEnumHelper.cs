@@ -5,8 +5,16 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Helpers
 {
+    /// <summary>
+    /// Helper for enums
+    /// </summary>
     public class FileSystemErrorEnumHelper
     {
+        /// <summary>
+        /// Get string note for errorEnum
+        /// </summary>
+        /// <param name="errorEnum"></param>
+        /// <returns></returns>
         public static string GetErrorNote(FileSystemErrorEnum errorEnum)
         {
             switch (errorEnum)

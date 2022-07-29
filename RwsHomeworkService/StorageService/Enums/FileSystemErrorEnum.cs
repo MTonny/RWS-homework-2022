@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Enums
 {
+    /// <summary>
+    /// Define errors
+    /// </summary>
     public enum FileSystemErrorEnum
     {
         // Requested file dont exist

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Interfaces
 {
+    /// <summary>
+    /// Interface for error check definitions
+    /// </summary>
     public interface IErrorCheck
     {
         List<Error> ErrorCheck();

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Enums
 {
+    /// <summary>
+    /// Define storage
+    /// </summary>
     public enum StorageServiceTypeEnum
     {
         Local = 1,

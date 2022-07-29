@@ -24,6 +24,13 @@ namespace RwsHomeworkService.ConversionService
             return _AllowedConversionTypes.Where(x => x.Source == source && x.Target == target).Any();
         }
 
+        /// <summary>
+        /// Converting file (format) bytes 
+        /// </summary>
+        /// <param name="inputType"></param>
+        /// <param name="targetType"></param>
+        /// <param name="fileBytes"></param>
+        /// <returns></returns>
         public static FileResult ConvertData(FileTypeEnum inputType, FileTypeEnum targetType, byte[] fileBytes)
         {
             FileResult res = new FileResult();

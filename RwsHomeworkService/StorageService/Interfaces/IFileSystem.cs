@@ -5,6 +5,9 @@ using System.Text;
 
 namespace RwsHomeworkService.StorageService.Interfaces
 {
+    /// <summary>
+    /// Interface for file storage definitions
+    /// </summary>
     public interface IFileSystem
     {
         FileResult GetFileBytes(string fullFileName);
